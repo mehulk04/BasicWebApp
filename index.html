@@ -85,6 +85,26 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		exampleVariable2 = 0;
 		exampleVariable3 = 0;
 	}
+
+	function specialFunction() {
+        // Get X and Y values from user input
+        var x = parseFloat(document.getElementById("firstInputBox").value);
+        var y = parseFloat(document.getElementById("secondInputBox").value);
+        
+        // Insert X smiley faces
+        for (let i = 0; i < x; i++) {
+            var smileyImage = document.createElement("img");
+            smileyImage.src = "https://i.imgur.com/jctdkSS.png";
+            document.getElementById("specialcontent").appendChild(smileyImage);
+        }
+        
+        // Insert Y frowny faces
+        for (let i = 0; i < y; i++) {
+            var frownyImage = document.createElement("img");
+            frownyImage.src = "https://i.imgur.com/dVUqrSt.png";
+            document.getElementById("specialcontent").appendChild(frownyImage);
+        }
+    }
 </script>
   
   
@@ -160,21 +180,27 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   <a href="#finalpage" onclick="exampleFunction1();" class="w3-btn w3-grey">Button 1</a>
   <a href="#finalpage" onclick="exampleFunction2();" class="w3-btn w3-grey">Button 2</a>
   <a href="#finalpage" onclick="exampleFunction3();" class="w3-btn w3-grey">Button 3</a>
-    
+  <a href="#specialpage" onclick="specialFunction();" class="w3-btn w3-grey">Special Option</a>  
   </center>
 </div>  
   
+<!--SMILEY AND FROWNY FACE SUBPAGE-->
+<div id="specialpage" class="page">
+	<!--Header-->
+	<div id="specialheader" class="w3-container w3-flat-carrot">
+		<h1>Special Page</h1>
+	</div>
+    		
+	<!--Main content of the page-->
+	<div id="specialcontent" class="w3-container">
+		<p>This page displays smiley and frowny faces based on user input.</p>
+	</div>
+  		
+	<!--Link to return to home page-->
+	<a href="#content" onclick="resetVariables();" class="w3-btn w3-grey">Return to Home Page</a>
+</div>
   
-  
-
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
+  	  
 	  
 <!--LAST SUBPAGE-->
 <div id="finalpage" class="page">
